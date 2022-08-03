@@ -14,23 +14,27 @@ import WidgetKit
 struct Provider: IntentTimelineProvider {
     // 読み込み中などに表示するplaceholder
     func placeholder(in context: Context) -> SimpleEntry {
-        SimpleEntry(date: Date(), configuration: ConfigurationIntent())
+        SimpleEntry(date: Date(), configuration: ConfigurationIntent(), inputText: "no data")
     }
     // ギャラリー用のViewを提供する
     // configuratoin.hogehogeで、Intentファイルに定義したhogehogeプロパティにアクセスできる
     func getSnapshot(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        let entry = SimpleEntry(date: Date(), configuration: configuration)
+        let entry = SimpleEntry(date: Date(), configuration: configuration, inputText: "no data")
         completion(entry)
     }
     // WidgetはTimelineの更新に連動して更新される。そのTimelineを生成し、実際のWidget表示用のViewを提供する
     func getTimeline(for configuration: ConfigurationIntent, in context: Context, completion: @escaping (Timeline<SimpleEntry>) -> ()) {
+        
+        let userDefaults = UserDefaults(suiteName: "group.com.yamakentoc.TryWidgetForLockScreen")
+        let inputText = userDefaults?.string(forKey: "inputText") ?? "no data"
+        
         /// TImelineEntryの配列を作成
         var entries: [SimpleEntry] = []
         let currentDate = Date()
         /// 15分おきに更新する
         let entryDate = Calendar.current.date(byAdding: .minute, value: 15, to: currentDate)!
         /// 更新時刻を設定したTImelineEntryを生成
-        let entry = SimpleEntry(date: entryDate, configuration: configuration)
+        let entry = SimpleEntry(date: entryDate, configuration: configuration, inputText: inputText)
         entries.append(entry)
         /// TimelineEntryの配列からTimelineを生成
         /// policy（Timelineの更新タイミング）は以下の3種類

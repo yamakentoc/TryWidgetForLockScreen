@@ -23,5 +23,7 @@ struct Widgets: WidgetBundle {
         TemperatureWidget()
         // 降水確率のWidget
         RainyPercentWidget()
+        // アプリ内で保存した文字を表示するWidget
+        InputTextWidget()
     }
 }

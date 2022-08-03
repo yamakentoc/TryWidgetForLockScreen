@@ -6,15 +6,30 @@
 //
 
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
+    
+    @State var text = ""
+    
+    let appGroupIdentifier = "group.com.yamakentoc.TryWidgetForLockScreen"
+        
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            TextField("Widgetへ表示するテキスト", text: $text)
+                .textFieldStyle(.roundedBorder)
+                
+            Button(action: {
+                // suiteNameにApp GroupsのIdentifierを指定する
+                let userDefaults = UserDefaults(suiteName: appGroupIdentifier)
+                userDefaults?.setValue(text, forKey: "inputText")
+                // ボタンタップ時すぐにWidgetを更新する
+                WidgetCenter.shared.reloadAllTimelines()
+            }) {
+                Text("保存")
+            }
         }
+        .padding()
     }
 }
 

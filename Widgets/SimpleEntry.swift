@@ -13,5 +13,6 @@ struct SimpleEntry: TimelineEntry {
     let date: Date
     /// Intentの情報
     let configuration: ConfigurationIntent
-    /// そのほかWidgetをレンダリングするのに必要な情報を追加する
+    /// アプリ内でUserDefaultsを用いて保存したテキスト
+    let inputText: String
 }
