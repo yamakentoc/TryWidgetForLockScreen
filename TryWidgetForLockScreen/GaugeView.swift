@@ -193,7 +193,7 @@ struct PractiveShapeView: View {
 
 struct GaugeView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        GaugeView()
         PractiveShapeView()
     }
 }
