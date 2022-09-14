@@ -26,6 +26,7 @@
 		15EB035B2898209200653D8D /* NewsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EB035928981FEC00653D8D /* NewsWidget.swift */; };
 		15EB035D2898222800653D8D /* TemperatureWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EB035C2898222800653D8D /* TemperatureWidget.swift */; };
 		15EB035F2898244600653D8D /* RainyPercentWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15EB035E2898244600653D8D /* RainyPercentWidget.swift */; };
+		B5E3B6F628D1FD7400A6D46C /* GaugeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E3B6F528D1FD7400A6D46C /* GaugeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		15EB035928981FEC00653D8D /* NewsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsWidget.swift; sourceTree = "<group>"; };
 		15EB035C2898222800653D8D /* TemperatureWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureWidget.swift; sourceTree = "<group>"; };
 		15EB035E2898244600653D8D /* RainyPercentWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RainyPercentWidget.swift; sourceTree = "<group>"; };
+		B5E3B6F528D1FD7400A6D46C /* GaugeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaugeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				15CCF689289AE914007D9F5F /* TryWidgetForLockScreen.entitlements */,
 				1500159F289812A800741C3E /* TryWidgetForLockScreenApp.swift */,
 				150015A1289812A800741C3E /* ContentView.swift */,
+				B5E3B6F528D1FD7400A6D46C /* GaugeView.swift */,
 				150015A3289812A900741C3E /* Assets.xcassets */,
 				150015A5289812A900741C3E /* Preview Content */,
 			);
@@ -276,6 +279,7 @@
 			files = (
 				150015BF2898131F00741C3E /* Widgets.intentdefinition in Sources */,
 				150015A2289812A800741C3E /* ContentView.swift in Sources */,
+				B5E3B6F628D1FD7400A6D46C /* GaugeView.swift in Sources */,
 				150015A0289812A800741C3E /* TryWidgetForLockScreenApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
